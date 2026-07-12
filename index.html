@@ -4,56 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Plano do Projeto · Natalia Balbinotti Estética Integrativa</title>
-<meta name="description" content="Plano de desenvolvimento do sistema web da clínica Natalia Balbinotti: visão geral, cronograma, pendências e investimento.">
+<meta name="description" content="Plano de desenvolvimento do sistema web da clínica Natalia Balbinotti: visão geral, evolução, pendências e investimento.">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --preto:#0D0D0D; --grafite:#1A1A1A; --grafite2:#2B2B2B;
-    --dourado:#C9A15A; --dourado-escuro:#A97F35; --champagne:#E8C77E;
+    --preto:#0D0D0D; --dourado:#C9A15A; --dourado-escuro:#A97F35; --champagne:#E8C77E;
     --marfim:#FBF9F5; --card:#FFFFFF; --card2:#F5F1E8;
     --linha:#E6E0D3; --texto:#1C1915; --texto2:#57503F; --texto3:#8A8172;
     --ok:#3E6B4A; --alerta:#8C3B2E;
   }
   *{box-sizing:border-box; margin:0}
   html{scroll-behavior:smooth}
-  body{
-    background:var(--marfim); color:var(--texto);
-    font-family:'Montserrat',sans-serif; font-size:15.5px; line-height:1.7;
-  }
+  body{background:var(--marfim); color:var(--texto); font-family:'Montserrat',sans-serif; font-size:15.5px; line-height:1.7}
 
-  header{
-    background:var(--preto); color:#fff;
-    padding:56px 24px 44px; text-align:center;
-    border-bottom:3px solid var(--dourado);
-  }
+  header{background:var(--preto); color:#fff; padding:56px 24px 44px; text-align:center; border-bottom:3px solid var(--dourado)}
   .logo{display:block; margin:0 auto; width:min(340px,82vw); height:auto}
-  .doc-titulo{
-    margin-top:34px; font-size:.8rem; letter-spacing:.24em; text-transform:uppercase;
-    color:rgba(255,255,255,.75);
-  }
-  .doc-status{
-    display:inline-block; margin-top:14px; font-size:.74rem; font-weight:600;
-    border:1px solid var(--dourado); color:var(--champagne);
-    padding:5px 16px; border-radius:999px; letter-spacing:.08em;
-  }
+  .doc-titulo{margin-top:34px; font-size:.8rem; letter-spacing:.24em; text-transform:uppercase; color:rgba(255,255,255,.75)}
+  .doc-status{display:inline-block; margin-top:14px; font-size:.74rem; font-weight:600; border:1px solid var(--dourado); color:var(--champagne); padding:5px 16px; border-radius:999px; letter-spacing:.08em}
+  .btn-previa{display:inline-block; margin-top:22px; background:linear-gradient(135deg,var(--dourado),var(--champagne)); color:var(--preto); text-decoration:none; font-weight:700; font-size:.82rem; letter-spacing:.08em; text-transform:uppercase; padding:13px 28px; border-radius:999px}
+  .btn-previa:hover{filter:brightness(1.06)}
 
-  nav.abas{
-    position:sticky; top:0; z-index:10;
-    background:var(--marfim); border-bottom:1px solid var(--linha);
-    display:flex; justify-content:center; gap:2px;
-    overflow-x:auto; -webkit-overflow-scrolling:touch;
-    padding:0 12px;
-  }
-  nav.abas button{
-    appearance:none; background:none; border:none; cursor:pointer;
-    font-family:'Montserrat',sans-serif; font-size:.82rem; font-weight:600;
-    letter-spacing:.06em; text-transform:uppercase;
-    color:var(--texto3); padding:18px 18px 15px;
-    border-bottom:3px solid transparent; white-space:nowrap;
-  }
+  nav.abas{position:sticky; top:0; z-index:10; background:var(--marfim); border-bottom:1px solid var(--linha); display:flex; justify-content:center; gap:2px; overflow-x:auto; -webkit-overflow-scrolling:touch; padding:0 12px}
+  nav.abas button{appearance:none; background:none; border:none; cursor:pointer; font-family:'Montserrat',sans-serif; font-size:.82rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--texto3); padding:18px 16px 15px; border-bottom:3px solid transparent; white-space:nowrap}
   nav.abas button:hover{color:var(--texto)}
   nav.abas button[aria-selected="true"]{color:var(--texto); border-bottom-color:var(--dourado)}
   nav.abas button:focus-visible{outline:2px solid var(--dourado); outline-offset:-2px}
@@ -62,64 +37,52 @@
   section[role="tabpanel"]{display:none}
   section[role="tabpanel"].ativa{display:block; animation:surge .3s ease}
   @keyframes surge{from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none}}
-  @media (prefers-reduced-motion:reduce){ section[role="tabpanel"].ativa{animation:none} }
+  @media (prefers-reduced-motion:reduce){ section[role="tabpanel"].ativa{animation:none} .barra i{transition:none !important} }
 
   h2{font-family:'Playfair Display',serif; font-weight:600; font-size:1.7rem; margin-bottom:8px}
   .sub{color:var(--texto2); max-width:64ch; margin-bottom:30px}
   h3{font-family:'Playfair Display',serif; font-weight:600; font-size:1.15rem; margin:34px 0 12px}
 
   .grade{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-  .cartao{
-    background:var(--card); border:1px solid var(--linha); border-radius:8px;
-    padding:22px 24px; box-shadow:0 1px 3px rgba(13,13,13,.04);
-  }
+  .cartao{background:var(--card); border:1px solid var(--linha); border-radius:8px; padding:22px 24px; box-shadow:0 1px 3px rgba(13,13,13,.04)}
   .cartao h4{font-family:'Playfair Display',serif; font-size:1.08rem; font-weight:600; margin-bottom:6px}
   .cartao p{font-size:.88rem; color:var(--texto2)}
-  .etiqueta{
-    display:inline-block; font-size:.66rem; font-weight:700; letter-spacing:.16em;
-    text-transform:uppercase; color:var(--dourado-escuro); margin-bottom:10px;
-  }
+  .etiqueta{display:inline-block; font-size:.66rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--dourado-escuro); margin-bottom:10px}
 
-  .pill{
-    display:inline-block; font-size:.68rem; font-weight:700; letter-spacing:.06em;
-    padding:3px 12px; border-radius:999px; white-space:nowrap;
-  }
+  .pill{display:inline-block; font-size:.68rem; font-weight:700; letter-spacing:.06em; padding:3px 12px; border-radius:999px; white-space:nowrap}
   .pill.feito{background:#EAF2EC; color:var(--ok)}
   .pill.aguarda{background:#F7ECE0; color:var(--dourado-escuro)}
   .pill.urgente{background:#F7E6E2; color:var(--alerta)}
 
+  .painel-geral{background:var(--preto); color:#fff; border-radius:10px; padding:26px 28px; margin-bottom:34px}
+  .painel-geral .rotulo{font-size:.7rem; letter-spacing:.22em; text-transform:uppercase; color:var(--champagne); font-weight:600}
+  .painel-geral .valor{font-family:'Playfair Display',serif; font-size:2.4rem; font-weight:600; margin:2px 0 12px}
+  .painel-geral .nota{font-size:.8rem; color:rgba(255,255,255,.65); margin-top:10px}
+  .barra{background:rgba(255,255,255,.14); border-radius:999px; height:10px; overflow:hidden}
+  .barra i{display:block; height:100%; width:0; border-radius:999px; background:linear-gradient(90deg,var(--dourado),var(--champagne)); transition:width 1.1s cubic-bezier(.22,1,.36,1)}
+  .clara .barra{background:#ECE6D8}
+
   .tempo{list-style:none; padding:0; margin:26px 0 0; position:relative}
-  .tempo::before{
-    content:''; position:absolute; left:11px; top:8px; bottom:8px;
-    width:2px; background:var(--linha);
-  }
-  .tempo li{position:relative; padding:0 0 34px 44px}
+  .tempo::before{content:''; position:absolute; left:11px; top:8px; bottom:8px; width:2px; background:var(--linha)}
+  .tempo li{position:relative; padding:0 0 36px 44px}
   .tempo li:last-child{padding-bottom:0}
-  .tempo li::before{
-    content:''; position:absolute; left:4px; top:6px;
-    width:16px; height:16px; border-radius:50%;
-    background:var(--marfim); border:2px solid var(--dourado);
-  }
+  .tempo li::before{content:''; position:absolute; left:4px; top:6px; width:16px; height:16px; border-radius:50%; background:var(--marfim); border:2px solid var(--dourado)}
   .tempo li.feito::before{background:var(--dourado)}
   .tempo .fase-cab{display:flex; flex-wrap:wrap; align-items:baseline; gap:10px}
   .tempo .fase-nome{font-family:'Playfair Display',serif; font-size:1.15rem; font-weight:600}
   .tempo .fase-prazo{font-size:.76rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--dourado-escuro)}
-  .tempo p{font-size:.9rem; color:var(--texto2); max-width:62ch; margin-top:4px}
+  .tempo .pct{margin-left:auto; font-weight:700; font-size:.95rem; color:var(--dourado-escuro); font-variant-numeric:tabular-nums}
+  .tempo .clara{margin-top:10px}
+  .tempo p{font-size:.9rem; color:var(--texto2); max-width:62ch; margin-top:10px}
   .tempo ul{margin:10px 0 0; padding-left:18px; font-size:.88rem; color:var(--texto2)}
   .tempo ul li{padding:2px 0; position:static}
   .tempo ul li::before{content:none}
 
-  .aviso{
-    background:var(--card2); border:1px solid var(--linha); border-left:3px solid var(--dourado);
-    border-radius:0 8px 8px 0; padding:16px 20px; margin:26px 0; font-size:.9rem; color:var(--texto2);
-  }
+  .aviso{background:var(--card2); border:1px solid var(--linha); border-left:3px solid var(--dourado); border-radius:0 8px 8px 0; padding:16px 20px; margin:26px 0; font-size:.9rem; color:var(--texto2)}
   .aviso b{color:var(--texto)}
+  .aviso a{color:var(--dourado-escuro); font-weight:600}
 
-  .pendencia{
-    background:var(--card); border:1px solid var(--linha); border-radius:8px;
-    padding:20px 24px; margin-bottom:14px;
-    display:flex; flex-direction:column; gap:6px;
-  }
+  .pendencia{background:var(--card); border:1px solid var(--linha); border-radius:8px; padding:20px 24px; margin-bottom:14px; display:flex; flex-direction:column; gap:6px}
   .pendencia.ok{border-left:3px solid var(--ok)}
   .pendencia .topo{display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap}
   .pendencia h4{font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:600}
@@ -129,24 +92,15 @@
 
   .rolagem{overflow-x:auto; border:1px solid var(--linha); border-radius:8px; background:var(--card)}
   table{border-collapse:collapse; width:100%; font-size:.87rem; min-width:560px}
-  th{
-    text-align:left; font-size:.68rem; letter-spacing:.14em; text-transform:uppercase;
-    color:var(--texto3); padding:12px 16px; border-bottom:1px solid var(--linha); background:var(--card2);
-  }
+  th{text-align:left; font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--texto3); padding:12px 16px; border-bottom:1px solid var(--linha); background:var(--card2)}
   td{padding:12px 16px; border-bottom:1px solid var(--linha); color:var(--texto2); vertical-align:top}
   td:first-child{color:var(--texto); font-weight:500}
   tr:last-child td{border-bottom:none}
   .num{font-variant-numeric:tabular-nums; white-space:nowrap}
   tr.total td{background:var(--card2); font-weight:700; color:var(--texto)}
 
-  footer{
-    background:var(--preto); color:rgba(255,255,255,.65);
-    text-align:center; padding:34px 24px; font-size:.8rem;
-  }
-  footer .assinatura{
-    font-size:.72rem; letter-spacing:.42em; text-transform:uppercase;
-    color:var(--champagne); margin-bottom:8px; font-weight:500;
-  }
+  footer{background:var(--preto); color:rgba(255,255,255,.65); text-align:center; padding:34px 24px; font-size:.8rem}
+  footer .assinatura{font-size:.72rem; letter-spacing:.42em; text-transform:uppercase; color:var(--champagne); margin-bottom:8px; font-weight:500}
 </style>
 </head>
 <body>
@@ -154,12 +108,13 @@
 <header>
   <img class="logo" src="https://raw.githubusercontent.com/tacyanne/nb-plano-assets/main/logo-nb.png" alt="Natalia Balbinotti · Estética Integrativa">
   <div class="doc-titulo">Plano do Sistema Web</div>
-  <div class="doc-status">Planejamento concluído · Materiais em recebimento</div>
+  <div><span class="doc-status">Em andamento · Prévia do site já disponível</span></div>
+  <a class="btn-previa" href="/sistema/">Ver prévia do sistema →</a>
 </header>
 
 <nav class="abas" role="tablist" aria-label="Seções do plano">
   <button role="tab" id="aba-visao" aria-selected="true" aria-controls="visao">Visão Geral</button>
-  <button role="tab" id="aba-cronograma" aria-selected="false" aria-controls="cronograma">Cronograma</button>
+  <button role="tab" id="aba-evolucao" aria-selected="false" aria-controls="evolucao">Evolução</button>
   <button role="tab" id="aba-pendencias" aria-selected="false" aria-controls="pendencias">Pendências</button>
   <button role="tab" id="aba-investimento" aria-selected="false" aria-controls="investimento">Investimento</button>
 </nav>
@@ -169,6 +124,8 @@
 <section id="visao" role="tabpanel" aria-labelledby="aba-visao" class="ativa">
   <h2>O que está sendo construído</h2>
   <p class="sub">Uma plataforma completa para a clínica, entregue em etapas. Cada etapa já entra em funcionamento assim que fica pronta: a clínica não precisa esperar tudo terminar para começar a usar.</p>
+
+  <div class="aviso"><b>Novidade:</b> a primeira prévia visual do site da clínica já está no ar, com o logotipo e os produtos recebidos. <a href="/sistema/">Clique aqui para ver a prévia</a>. O conteúdo é provisório e vai sendo substituído conforme os materiais chegam.</div>
 
   <div class="grade">
     <div class="cartao">
@@ -203,56 +160,61 @@
     </div>
   </div>
 
-  <h3>Onde estamos agora</h3>
-  <ul class="tempo">
-    <li class="feito">
-      <div class="fase-cab"><span class="fase-nome">Planejamento</span> <span class="pill feito">Concluído</span></div>
-      <p>Escopo, arquitetura, telas, regras e cronograma definidos e documentados.</p>
-    </li>
-    <li class="feito">
-      <div class="fase-cab"><span class="fase-nome">Aprovação e materiais</span> <span class="pill aguarda">Em andamento</span></div>
-      <p>Já recebidos: logotipo, rótulos dos produtos, horário de funcionamento e regra de agendamento. Faltam: lista de serviços com durações e preços, equipe e salas, textos e fotos (veja a aba <b>Pendências</b>).</p>
-    </li>
-    <li>
-      <div class="fase-cab"><span class="fase-nome">Construção da Etapa 1</span></div>
-      <p>Começa assim que as pendências urgentes forem resolvidas. Duração estimada: 8 a 10 semanas.</p>
-    </li>
-  </ul>
-
   <div class="aviso"><b>Regra de agendamento definida com a clínica:</b> os procedimentos exigem avaliação prévia, agendada pelo site. As exceções, que podem ser agendadas diretamente online, são: <b>massagem relaxante, massagem terapêutica, drenagem linfática e limpeza de pele</b>. Isso protege a cliente, garante o procedimento certo e valoriza o trabalho da clínica.</div>
 </section>
 
-<section id="cronograma" role="tabpanel" aria-labelledby="aba-cronograma">
-  <h2>Cronograma</h2>
-  <p class="sub">Os prazos abaixo começam a contar a partir da aprovação do plano e da entrega dos materiais urgentes (veja a aba Pendências). Cada etapa é entregue funcionando e testada antes de passar para a próxima.</p>
+<section id="evolucao" role="tabpanel" aria-labelledby="aba-evolucao">
+  <h2>Evolução do projeto</h2>
+  <p class="sub">Linha do tempo com o andamento real de cada etapa. As porcentagens são atualizadas conforme o trabalho avança; os prazos começam a contar quando as pendências urgentes forem resolvidas.</p>
+
+  <div class="painel-geral">
+    <div class="rotulo">Progresso geral do projeto</div>
+    <div class="valor"><span data-conta="18">0</span>%</div>
+    <div class="barra"><i data-pct="18"></i></div>
+    <div class="nota">Planejamento concluído, materiais principais recebidos e prévia visual do site publicada. Atualizado em 11/07/2026.</div>
+  </div>
 
   <ul class="tempo">
-    <li>
-      <div class="fase-cab"><span class="fase-nome">Etapa 1 · Site + Agendamento + Fichas</span> <span class="fase-prazo">Meses 1 a 2,5</span></div>
-      <p>É o lançamento principal: a clínica passa a existir na internet e a operar com agenda digital.</p>
+    <li class="feito">
+      <div class="fase-cab"><span class="fase-nome">Planejamento</span> <span class="pill feito">Concluído</span> <span class="pct">100%</span></div>
+      <div class="clara"><div class="barra"><i data-pct="100"></i></div></div>
+      <p>Escopo, arquitetura, regras de negócio, cronograma e custos definidos e documentados.</p>
+    </li>
+    <li class="feito">
+      <div class="fase-cab"><span class="fase-nome">Preparação e materiais</span> <span class="pill aguarda">Em andamento</span> <span class="pct">60%</span></div>
+      <div class="clara"><div class="barra"><i data-pct="60"></i></div></div>
+      <p>Recebidos: logotipo, rótulos, horários e regra de agendamento. Faltam: lista de serviços com durações e preços, salas e equipe, textos e fotos.</p>
+    </li>
+    <li class="feito">
+      <div class="fase-cab"><span class="fase-nome">Etapa 1 · Site + Agendamento + Fichas</span> <span class="fase-prazo">10 semanas</span> <span class="pct">10%</span></div>
+      <div class="clara"><div class="barra"><i data-pct="10"></i></div></div>
+      <p>Prévia visual do site publicada com a identidade da marca. O desenvolvimento completo começa quando as pendências urgentes forem resolvidas.</p>
       <ul>
-        <li><b>Semanas 1 a 2:</b> estrutura, segurança e banco de dados (trabalho interno, sem telas ainda).</li>
-        <li><b>Semanas 3 a 6:</b> site da clínica com a identidade da marca.</li>
-        <li><b>Semanas 5 a 8:</b> agendamento online, agenda da equipe, Google Agenda, lembretes por WhatsApp e e-mail.</li>
-        <li><b>Semanas 8 a 9:</b> cadastro de clientes, anamnese digital e termos de consentimento.</li>
-        <li><b>Semana 10:</b> testes finais, treinamento da equipe e publicação.</li>
+        <li><b>Semanas 1 a 2:</b> estrutura, segurança e banco de dados.</li>
+        <li><b>Semanas 3 a 6:</b> site completo da clínica.</li>
+        <li><b>Semanas 5 a 8:</b> agendamento online, agenda da equipe, Google Agenda, lembretes.</li>
+        <li><b>Semanas 8 a 9:</b> cadastro de clientes, anamnese digital e termos.</li>
+        <li><b>Semana 10:</b> testes finais, treinamento e publicação.</li>
       </ul>
     </li>
     <li>
-      <div class="fase-cab"><span class="fase-nome">Etapa 2 · Gestão da clínica</span> <span class="fase-prazo">Meses 3 a 4,5</span></div>
-      <p>Pacotes de sessões, estoque com controle de validade, financeiro (contas a pagar e receber), comissões e relatórios. Inclui o cadastro do inventário inicial com a equipe.</p>
+      <div class="fase-cab"><span class="fase-nome">Etapa 2 · Gestão da clínica</span> <span class="fase-prazo">+ 6 a 8 semanas</span> <span class="pct">0%</span></div>
+      <div class="clara"><div class="barra"><i data-pct="0"></i></div></div>
+      <p>Pacotes de sessões, estoque com validade, financeiro, comissões e relatórios.</p>
     </li>
     <li>
-      <div class="fase-cab"><span class="fase-nome">Etapa 3 · Loja virtual</span> <span class="fase-prazo">Meses 5 a 6,5</span></div>
-      <p>Venda dos produtos Inigua pelo site com Pix e cartão. Também habilita a cobrança de sinal no agendamento, se a clínica decidir usar.</p>
+      <div class="fase-cab"><span class="fase-nome">Etapa 3 · Loja virtual</span> <span class="fase-prazo">+ 6 a 8 semanas</span> <span class="pct">0%</span></div>
+      <div class="clara"><div class="barra"><i data-pct="0"></i></div></div>
+      <p>Venda dos produtos Inigua com Pix e cartão; habilita também o sinal no agendamento, se aprovado.</p>
     </li>
     <li>
-      <div class="fase-cab"><span class="fase-nome">Etapa 4 · Automações</span> <span class="fase-prazo">A partir do mês 7</span></div>
-      <p>Melhorias contínuas em pacotes pequenos: reativação de clientes, campanhas, indicadores avançados. Priorizadas junto com a clínica conforme a operação real.</p>
+      <div class="fase-cab"><span class="fase-nome">Etapa 4 · Automações</span> <span class="fase-prazo">Contínua</span> <span class="pct">0%</span></div>
+      <div class="clara"><div class="barra"><i data-pct="0"></i></div></div>
+      <p>Reativação de clientes, campanhas com consentimento e indicadores avançados.</p>
     </li>
   </ul>
 
-  <div class="aviso"><b>O que pode atrasar o cronograma:</b> na prática, o maior risco de atraso não é a tecnologia, e sim a espera por textos, fotos, lista de serviços e aprovações externas (como a liberação do WhatsApp oficial pela Meta, que pode levar de dias a semanas). Por isso essas frentes começam já na primeira semana.</div>
+  <div class="aviso"><b>O que pode atrasar o cronograma:</b> na prática, o maior risco não é a tecnologia, e sim a espera por textos, fotos, lista de serviços e aprovações externas (como a liberação do WhatsApp oficial pela Meta, que pode levar de dias a semanas). Por isso essas frentes começam já na primeira semana.</div>
 </section>
 
 <section id="pendencias" role="tabpanel" aria-labelledby="aba-pendencias">
@@ -263,8 +225,8 @@
 
   <div class="pendencia ok">
     <div class="topo"><h4>Logotipo e rótulos dos produtos</h4><span class="pill feito">Recebido em 11/07</span></div>
-    <p>Logotipo em alta resolução (versão clara para fundo escuro, já aplicada no topo desta página) e imagens dos produtos Inigua Life e Inigua Form, incluindo o rótulo completo do Form.</p>
-    <p class="como"><b>Complemento bem-vindo:</b> se existir versão do logotipo para fundo claro (dourado/preto) e o rótulo completo do Inigua Life, pode enviar também; ajudam nas páginas de fundo branco e na futura loja.</p>
+    <p>Logotipo em alta resolução (versão clara para fundo escuro, já aplicada nesta página e na prévia do site) e imagens dos produtos Inigua Life e Inigua Form, incluindo o rótulo completo do Form.</p>
+    <p class="como"><b>Complemento bem-vindo:</b> versão do logotipo para fundo claro (dourado/preto) e rótulo completo do Inigua Life.</p>
   </div>
 
   <div class="pendencia ok">
@@ -375,15 +337,33 @@
 
 <footer>
   <div class="assinatura">Natalia Balbinotti · Estética Integrativa</div>
-  Plano do sistema web · versão 1.1 · julho de 2026
+  Plano do sistema web · versão 1.2 · julho de 2026
 </footer>
 
 <script>
   const abas = document.querySelectorAll('nav.abas button');
   const paineis = document.querySelectorAll('section[role="tabpanel"]');
+  const reduzMov = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function animarBarras(escopo){
+    setTimeout(() => {
+      escopo.querySelectorAll('.barra i').forEach(b => { b.style.width = b.dataset.pct + '%'; });
+    }, 60);
+    escopo.querySelectorAll('[data-conta]').forEach(el => {
+      const alvo = parseInt(el.dataset.conta, 10);
+      if (el.dataset.feito === '1' || reduzMov){ el.textContent = alvo; return; }
+      el.dataset.feito = '1';
+      let atual = 0;
+      const id = setInterval(() => {
+        atual += 1;
+        if (atual >= alvo){ atual = alvo; clearInterval(id); }
+        el.textContent = atual;
+      }, 45);
+    });
+  }
   function ativar(id){
     paineis.forEach(p => p.classList.toggle('ativa', p.id === id));
     abas.forEach(b => b.setAttribute('aria-selected', String(b.getAttribute('aria-controls') === id)));
+    animarBarras(document.getElementById(id));
   }
   abas.forEach(b => b.addEventListener('click', () => {
     const id = b.getAttribute('aria-controls');
