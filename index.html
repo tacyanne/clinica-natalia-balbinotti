@@ -78,6 +78,9 @@
   .tempo ul li{padding:2px 0; position:static}
   .tempo ul li::before{content:none}
 
+  .subprog{margin-top:14px}
+  .subprog .rot{display:flex; justify-content:space-between; font-size:.82rem; color:var(--texto2); margin-bottom:6px}
+
   .aviso{background:var(--card2); border:1px solid var(--linha); border-left:3px solid var(--dourado); border-radius:0 8px 8px 0; padding:16px 20px; margin:26px 0; font-size:.9rem; color:var(--texto2)}
   .aviso b{color:var(--texto)}
   .aviso a{color:var(--dourado-escuro); font-weight:600}
@@ -169,9 +172,9 @@
 
   <div class="painel-geral">
     <div class="rotulo">Progresso geral do projeto</div>
-    <div class="valor"><span data-conta="33">0</span>%</div>
-    <div class="barra"><i data-pct="33"></i></div>
-    <div class="nota">Planejamento concluído; materiais essenciais recebidos; regras de cancelamento, WhatsApp oficial e sinal opcional já confirmados. Nenhuma pendência urgente restante; desenvolvimento da Etapa 1 segue em ritmo pleno. Atualizado em 14/07/2026.</div>
+    <div class="valor"><span data-conta="22">0</span>%</div>
+    <div class="barra"><i data-pct="22"></i></div>
+    <div class="nota">Planejamento concluído; materiais essenciais recebidos; regras de cancelamento, WhatsApp oficial e sinal opcional já confirmados. Nenhuma pendência urgente restante. Ajuste de 14/07: separamos "conteúdo/prévia visual" (adiantado) de "backend técnico" (ainda não iniciado) dentro da Etapa 1, para o número refletir com precisão o que já está pronto.</div>
   </div>
 
   <ul class="tempo">
@@ -186,11 +189,19 @@
       <p>Recebidos: logotipo, rótulos, horários, regra de agendamento, procedimentos com descrições, preços e durações dos 4 serviços de agendamento direto, texto "Quem somos", foto oficial, equipe, salas e a duração/preço da consulta de avaliação. Falta apenas as fotos do espaço (não bloqueia o desenvolvimento).</p>
     </li>
     <li class="feito">
-      <div class="fase-cab"><span class="fase-nome">Etapa 1 · Site + Agendamento + Fichas</span> <span class="fase-prazo">10 semanas</span> <span class="pct">20%</span></div>
-      <div class="clara"><div class="barra"><i data-pct="20"></i></div></div>
-      <p>Prévia do site no ar com identidade da marca, procedimentos oficiais com preços, seção "Quem somos" e foto. Sem pendências urgentes restantes, o desenvolvimento completo (agendamento, agenda interna, fichas) segue em ritmo pleno.</p>
+      <div class="fase-cab"><span class="fase-nome">Etapa 1 · Site + Agendamento + Fichas</span> <span class="fase-prazo">10 semanas</span> <span class="pct">10%</span></div>
+      <div class="clara"><div class="barra"><i data-pct="10"></i></div></div>
+      <p>Duas frentes correm juntas nesta etapa: o conteúdo/prévia visual (o que você já vê no link da prévia) e o backend técnico (banco de dados, agendamento, autenticação — ainda não visível, é onde o trabalho de programação de fato acontece).</p>
+      <div class="subprog">
+        <div class="rot"><span>Conteúdo e prévia visual</span><b style="color:var(--dourado-escuro)">70%</b></div>
+        <div class="barra"><i data-pct="70"></i></div>
+      </div>
+      <div class="subprog">
+        <div class="rot"><span>Backend técnico (estrutura, segurança, banco de dados)</span><b style="color:var(--texto3)">0%</b></div>
+        <div class="barra"><i data-pct="0"></i></div>
+      </div>
       <ul>
-        <li><b>Semanas 1 a 2:</b> estrutura, segurança e banco de dados.</li>
+        <li><b>Semanas 1 a 2:</b> estrutura, segurança e banco de dados. <span style="color:var(--texto3)">— ainda não iniciado</span></li>
         <li><b>Semanas 3 a 6:</b> site completo da clínica.</li>
         <li><b>Semanas 5 a 8:</b> agendamento online, agenda da equipe, Google Agenda, lembretes.</li>
         <li><b>Semanas 8 a 9:</b> cadastro de clientes, anamnese digital e termos.</li>
@@ -336,7 +347,7 @@
 
 <footer>
   <div class="assinatura">Natalia Balbinotti · Estética Integrativa</div>
-  Plano do sistema web · versão 1.7 · julho de 2026
+  Plano do sistema web · versão 1.8 · julho de 2026
 </footer>
 
 <script>
