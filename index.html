@@ -81,6 +81,15 @@
   .subprog{margin-top:14px}
   .subprog .rot{display:flex; justify-content:space-between; font-size:.82rem; color:var(--texto2); margin-bottom:6px}
 
+  .gantt-scroll{overflow-x:auto; margin-top:18px; -webkit-overflow-scrolling:touch}
+  .gantt{min-width:720px; display:flex; flex-direction:column; gap:10px}
+  .gantt-linha{display:grid; grid-template-columns:220px repeat(10,1fr); align-items:center; gap:6px}
+  .gantt-cabecalho{font-size:.62rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--texto3); padding-bottom:8px; border-bottom:1px solid var(--linha); margin-bottom:2px}
+  .gantt-cabecalho span{text-align:center}
+  .gantt-nome{font-size:.82rem; color:var(--texto2)}
+  .gantt-barra{background:linear-gradient(90deg,var(--dourado),var(--champagne)); color:var(--preto); font-size:.68rem; font-weight:700; text-align:center; border-radius:6px; padding:7px 4px; white-space:nowrap}
+  .gantt-legenda{font-size:.78rem; color:var(--texto3); margin-top:12px}
+
   .aviso{background:var(--card2); border:1px solid var(--linha); border-left:3px solid var(--dourado); border-radius:0 8px 8px 0; padding:16px 20px; margin:26px 0; font-size:.9rem; color:var(--texto2)}
   .aviso b{color:var(--texto)}
   .aviso a{color:var(--dourado-escuro); font-weight:600}
@@ -200,13 +209,35 @@
         <div class="rot"><span>Backend técnico (estrutura, segurança, banco de dados)</span><b style="color:var(--texto3)">0%</b></div>
         <div class="barra"><i data-pct="0"></i></div>
       </div>
-      <ul>
-        <li><b>Semanas 1 a 2:</b> estrutura, segurança e banco de dados. <span style="color:var(--texto3)">— ainda não iniciado</span></li>
-        <li><b>Semanas 3 a 6:</b> site completo da clínica.</li>
-        <li><b>Semanas 5 a 8:</b> agendamento online, agenda da equipe, Google Agenda, lembretes.</li>
-        <li><b>Semanas 8 a 9:</b> cadastro de clientes, anamnese digital e termos.</li>
-        <li><b>Semana 10:</b> testes finais, treinamento e publicação.</li>
-      </ul>
+      <div class="gantt-scroll">
+        <div class="gantt">
+          <div class="gantt-linha gantt-cabecalho">
+            <div></div>
+            <span>S1</span><span>S2</span><span>S3</span><span>S4</span><span>S5</span><span>S6</span><span>S7</span><span>S8</span><span>S9</span><span>S10</span>
+          </div>
+          <div class="gantt-linha">
+            <div class="gantt-nome">Estrutura, segurança e banco de dados</div>
+            <div class="gantt-barra" style="grid-column:2 / span 2">S1–S2</div>
+          </div>
+          <div class="gantt-linha">
+            <div class="gantt-nome">Site completo da clínica</div>
+            <div class="gantt-barra" style="grid-column:4 / span 4">S3–S6</div>
+          </div>
+          <div class="gantt-linha">
+            <div class="gantt-nome">Agendamento online, agenda da equipe, Google Agenda, lembretes</div>
+            <div class="gantt-barra" style="grid-column:6 / span 4">S5–S8</div>
+          </div>
+          <div class="gantt-linha">
+            <div class="gantt-nome">Cadastro de clientes, anamnese digital e termos</div>
+            <div class="gantt-barra" style="grid-column:9 / span 2">S8–S9</div>
+          </div>
+          <div class="gantt-linha">
+            <div class="gantt-nome">Testes finais, treinamento e publicação</div>
+            <div class="gantt-barra" style="grid-column:11 / span 1">S10</div>
+          </div>
+        </div>
+      </div>
+      <p class="gantt-legenda">Cronograma planejado da Etapa 1 (10 semanas). A contagem das semanas começa quando o desenvolvimento técnico for iniciado.</p>
     </li>
     <li>
       <div class="fase-cab"><span class="fase-nome">Etapa 2 · Gestão da clínica</span> <span class="fase-prazo">+ 6 a 8 semanas</span> <span class="pct">0%</span></div>
@@ -347,7 +378,7 @@
 
 <footer>
   <div class="assinatura">Natalia Balbinotti · Estética Integrativa</div>
-  Plano do sistema web · versão 1.8 · julho de 2026
+  Plano do sistema web · versão 1.9 · julho de 2026
 </footer>
 
 <script>
