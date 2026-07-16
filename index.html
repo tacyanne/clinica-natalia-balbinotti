@@ -78,9 +78,6 @@
   .tempo ul li{padding:2px 0; position:static}
   .tempo ul li::before{content:none}
 
-  .subprog{margin-top:14px}
-  .subprog .rot{display:flex; justify-content:space-between; font-size:.82rem; color:var(--texto2); margin-bottom:6px}
-
   .gantt-scroll{overflow-x:auto; margin-top:18px; -webkit-overflow-scrolling:touch}
   .gantt{min-width:720px; display:flex; flex-direction:column; gap:10px}
   .gantt-linha{display:grid; grid-template-columns:220px repeat(10,1fr); align-items:center; gap:6px}
@@ -88,6 +85,7 @@
   .gantt-cabecalho span{text-align:center}
   .gantt-nome{font-size:.82rem; color:var(--texto2)}
   .gantt-barra{background:linear-gradient(90deg,var(--dourado),var(--champagne)); color:var(--preto); font-size:.68rem; font-weight:700; text-align:center; border-radius:6px; padding:7px 4px; white-space:nowrap}
+  .gantt-barra.feito{background:linear-gradient(90deg,var(--ok),#5FA873); color:#fff}
   .gantt-legenda{font-size:.78rem; color:var(--texto3); margin-top:12px}
 
   .aviso{background:var(--card2); border:1px solid var(--linha); border-left:3px solid var(--dourado); border-radius:0 8px 8px 0; padding:16px 20px; margin:26px 0; font-size:.9rem; color:var(--texto2)}
@@ -183,7 +181,7 @@
     <div class="rotulo">Progresso geral do projeto</div>
     <div class="valor"><span data-conta="22">0</span>%</div>
     <div class="barra"><i data-pct="22"></i></div>
-    <div class="nota">Planejamento concluído; materiais essenciais recebidos; regras de cancelamento, WhatsApp oficial e sinal opcional já confirmados. Nenhuma pendência urgente restante. Ajuste de 14/07: separamos "conteúdo/prévia visual" (adiantado) de "backend técnico" (ainda não iniciado) dentro da Etapa 1, para o número refletir com precisão o que já está pronto.</div>
+    <div class="nota">Planejamento concluído; materiais essenciais recebidos; regras de cancelamento, WhatsApp oficial e sinal opcional já confirmados. Nenhuma pendência urgente restante; a Etapa 1 segue o cronograma detalhado abaixo, com cada entregável marcado conforme é concluído.</div>
   </div>
 
   <ul class="tempo">
@@ -200,15 +198,7 @@
     <li class="feito">
       <div class="fase-cab"><span class="fase-nome">Etapa 1 · Site + Agendamento + Fichas</span> <span class="fase-prazo">10 semanas</span> <span class="pct">10%</span></div>
       <div class="clara"><div class="barra"><i data-pct="10"></i></div></div>
-      <p>Duas frentes correm juntas nesta etapa: o conteúdo/prévia visual (o que você já vê no link da prévia) e o backend técnico (banco de dados, agendamento, autenticação — ainda não visível, é onde o trabalho de programação de fato acontece).</p>
-      <div class="subprog">
-        <div class="rot"><span>Conteúdo e prévia visual</span><b style="color:var(--dourado-escuro)">70%</b></div>
-        <div class="barra"><i data-pct="70"></i></div>
-      </div>
-      <div class="subprog">
-        <div class="rot"><span>Backend técnico (estrutura, segurança, banco de dados)</span><b style="color:var(--texto3)">0%</b></div>
-        <div class="barra"><i data-pct="0"></i></div>
-      </div>
+      <p>Prévia do site no ar com identidade da marca. O desenvolvimento técnico (banco de dados, agendamento, autenticação) segue o cronograma abaixo; cada entregável muda para verde conforme é concluído.</p>
       <div class="gantt-scroll">
         <div class="gantt">
           <div class="gantt-linha gantt-cabecalho">
@@ -237,7 +227,7 @@
           </div>
         </div>
       </div>
-      <p class="gantt-legenda">Cronograma planejado da Etapa 1 (10 semanas). A contagem das semanas começa quando o desenvolvimento técnico for iniciado.</p>
+      <p class="gantt-legenda">Cronograma planejado da Etapa 1 (10 semanas). Cada entregável fica <b style="color:var(--ok)">verde</b> assim que é concluído; a contagem das semanas começa quando o desenvolvimento técnico for iniciado.</p>
     </li>
     <li>
       <div class="fase-cab"><span class="fase-nome">Etapa 2 · Gestão da clínica</span> <span class="fase-prazo">+ 6 a 8 semanas</span> <span class="pct">0%</span></div>
@@ -378,7 +368,7 @@
 
 <footer>
   <div class="assinatura">Natalia Balbinotti · Estética Integrativa</div>
-  Plano do sistema web · versão 1.9 · julho de 2026
+  Plano do sistema web · versão 2.0 · julho de 2026
 </footer>
 
 <script>
