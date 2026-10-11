@@ -45,3 +45,11 @@ produtos/           # imagens de produtos
 - Vercel, projeto `plano-natalia-balbinotti`, produção em https://plano-natalia-balbinotti.vercel.app
 - Sem `vercel.json`: arquivos estáticos servidos como estão.
 - Variáveis de ambiente: nenhuma.
+
+## Fluxo de git (padronização C:\dev)
+
+- Proibido push direto na `main`: toda mudança, inclusive só documentação, vai por **branch → PR → aprovação da Tacyanne → merge**.
+- Nunca usar `--force` na `main`, nem `--no-verify`, nem fazer merge sem aprovação explícita da Tacyanne.
+- Branch: `tipo/descricao-curta` (`feat/`, `fix/`, `docs/`, `chore/`). Commits em Conventional Commits, em português.
+- Ao abrir o PR, informar o link e parar; o merge é decisão da Tacyanne.
+- O repo local tem hook `pre-push` que bloqueia push para `main`.
