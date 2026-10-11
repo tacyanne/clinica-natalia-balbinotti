@@ -1,0 +1,14 @@
+# Dependências
+node_modules/
+
+# Variáveis de ambiente
+.env
+.env.*
+!.env.example
+
+# Vercel
+.vercel
+
+# Sistema / editor
+.DS_Store
+Thumbs.db
